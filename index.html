@@ -1,0 +1,226 @@
+﻿<!doctype html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ЛР1 HTML — Варіант 3</title>
+</head>
+
+<body>
+    <header>
+        <h1>Лабораторна робота №1: Основи HTML (варіант 3)</h1>
+        <p>
+            Тема сторінки: <strong>Мій студентський кабінет</strong> —
+            приклад розмітки без CSS (таблична верстка для 2 колонок).
+        </p>
+        <hr>
+    </header>
+
+    <!-- 2-колонкова структура без CSS: таблиця як макет -->
+    <table role="presentation">
+        <tr>
+            <td valign="top" width="260">
+                <nav aria-label="Навігація">
+                    <h2>Меню</h2>
+                    <ul>
+                        <li><a href="#formatted">Оформлений текст</a></li>
+                        <li><a href="#dropdown">Випадаючий список</a></li>
+                        <li><a href="#book">Таблиця (зміст книги)</a></li>
+                        <li><a href="#form">Форма (дані студента)</a></li>
+                        <li><a href="details.html#memo">Перейти до пам’ятки (інша сторінка)</a></li>
+                    </ul>
+
+                    <p>
+                        <small>
+                            Підказка: відносне посилання вище веде на розділ <code>#memo</code> файлу
+                            <code>details.html</code>.
+                        </small>
+                    </p>
+                </nav>
+
+                <hr>
+
+                <!-- Зображення + гіперпосилання (клік по картинці) -->
+                <figure>
+                    <a href="details.html#memo">
+                        <img src="images/var_phys.png"
+                             alt="Формула E=mc² і пояснення позначень"
+                             width="360"
+                             height="80"
+                             decoding="async">
+                    </a>
+                    <figcaption>
+                        Клікни по зображенню → відкриється потрібний розділ на іншій сторінці.
+                    </figcaption>
+                </figure>
+            </td>
+
+            <td valign="top">
+                <main>
+                    <section id="formatted">
+                        <h2>Оформлений текст (як у варіанті)</h2>
+
+                        <p>
+                            <strong><em>E</em>=<em>m</em><em>c</em><sup>2</sup></strong>,
+                            where <strong>E</strong> &mdash; energy of the object,
+                            <strong>m</strong> &mdash; it&apos;s mass,
+                            <strong>c</strong> &mdash; speed of light in vacuum,
+                            equals to <strong>299&nbsp;792&nbsp;458</strong> m/s
+                        </p>
+
+                        <p>
+                            Додатково для сутностей (спецсимволів): &alpha;, &beta;, &rarr;,
+                            а також кутові дужки: &lt;tag&gt;.
+                        </p>
+
+                        <p>
+                            Приклад під- та надрядкового: H<sub>2</sub>O, x<sup>3</sup>.
+                        </p>
+
+                        <hr>
+                    </section>
+
+                    <section id="dropdown">
+                        <h2>Випадаючий список студентів групи</h2>
+
+                        <p>Оберіть студента (можна обмежитись бригадою):</p>
+
+                        <form action="#" method="get">
+                            <label for="student">Студент:</label><br>
+                            <select id="student" name="student">
+                                <option value="">-- оберіть --</option>
+                                <option value="ivanenko">Іваненко Іван</option>
+                                <option value="petrenko">Петренко Олена</option>
+                                <option value="shevchenko">Шевченко Максим</option>
+                                <option value="koval">Коваль Анастасія</option>
+                                <option value="bondar">Бондар Артем</option>
+                            </select>
+
+                            <p>
+                                <button type="submit">Підтвердити</button>
+                            </p>
+                        </form>
+
+                        <hr>
+                    </section>
+
+                    <section id="book">
+                        <h2>Таблиця: зміст довільної книги</h2>
+
+                        <table>
+                            <caption><strong>Зміст книги “Основи веб-розробки”</strong></caption>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Розділ</th>
+                                    <th scope="col">Сторінка</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>1. Вступ. Як працює Web</td><td>1</td></tr>
+                                <tr><td>2. Структура HTML-документа</td><td>12</td></tr>
+                                <tr><td>3. Текст, сутності та форматування</td><td>27</td></tr>
+                                <tr><td>4. Списки, посилання, зображення</td><td>41</td></tr>
+                                <tr><td>5. Таблиці та типові помилки</td><td>58</td></tr>
+                                <tr><td>6. Форми та елементи керування</td><td>73</td></tr>
+                                <tr><td>7. Публікація на GitHub Pages</td><td>95</td></tr>
+                            </tbody>
+                        </table>
+
+                        <p>
+                            <small>
+                                (Без CSS таблиця може виглядати “плоско”, але структура коректна і валідна.)
+                            </small>
+                        </p>
+
+                        <hr>
+                    </section>
+
+                    <section id="form">
+                        <h2>Форма для введення інформації про студента</h2>
+
+                        <form action="#" method="post">
+                            <fieldset>
+                                <legend>Основні дані</legend>
+
+                                <p>
+                                    <label for="fullname">ПІБ:</label><br>
+                                    <input id="fullname" name="fullname" type="text" required
+                                           placeholder="Прізвище Ім’я По батькові">
+                                </p>
+
+                                <p>
+                                    <label for="student_id">№ залікової:</label><br>
+                                    <input id="student_id" name="student_id" type="text" required
+                                           placeholder="Напр.: 123456">
+                                </p>
+
+                                <p>
+                                    <label for="birth">Дата народження:</label><br>
+                                    <input id="birth" name="birth" type="date">
+                                </p>
+
+                                <p>
+                                    <label for="email">Email:</label><br>
+                                    <input id="email" name="email" type="email" required placeholder="name@example.com">
+                                </p>
+
+                                <p>
+                                    <label for="phone">Телефон:</label><br>
+                                    <input id="phone" name="phone" type="tel" placeholder="+380XXXXXXXXX">
+                                </p>
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>Навчання</legend>
+
+                                <p>
+                                    <label for="group">Група:</label><br>
+                                    <input id="group" name="group" type="text" placeholder="Напр.: ІТЕ-23-1">
+                                </p>
+
+                                <p>
+                                    Курс:<br>
+                                    <label><input type="radio" name="course" value="1"> 1</label>
+                                    <label><input type="radio" name="course" value="2"> 2</label>
+                                    <label><input type="radio" name="course" value="3"> 3</label>
+                                    <label><input type="radio" name="course" value="4"> 4</label>
+                                </p>
+
+                                <p>
+                                    Мови/технології:<br>
+                                    <label><input type="checkbox" name="stack" value="html"> HTML</label>
+                                    <label><input type="checkbox" name="stack" value="css"> CSS</label>
+                                    <label><input type="checkbox" name="stack" value="js"> JavaScript</label>
+                                    <label><input type="checkbox" name="stack" value="git"> Git</label>
+                                </p>
+
+                                <p>
+                                    <label for="about">Коротко про себе:</label><br>
+                                    <textarea id="about" name="about" rows="4" cols="50"
+                                              placeholder="2–3 речення..."></textarea>
+                                </p>
+                            </fieldset>
+
+                            <p>
+                                <button type="submit">Надіслати</button>
+                                <button type="reset">Очистити</button>
+                            </p>
+                        </form>
+
+                        <p>
+                            Перевірити перехід на іншу сторінку:
+                            <a href="details.html#memo">відкрити пам’ятку</a>.
+                        </p>
+                    </section>
+                </main>
+
+                <hr>
+
+                <footer>
+                    <p><small>ЛР1 HTML • Варіант 3</small></p>
+                </footer>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

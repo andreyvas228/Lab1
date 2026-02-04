@@ -9,14 +9,8 @@
 <body>
     <header>
         <h1>Лабораторна робота №1: Основи HTML (варіант 3)</h1>
-        <p>
-            Тема сторінки: <strong>Мій студентський кабінет</strong> —
-            приклад розмітки без CSS (таблична верстка для 2 колонок).
-        </p>
-        <hr>
     </header>
 
-    <!-- 2-колонкова структура без CSS: таблиця як макет -->
     <table role="presentation">
         <tr>
             <td valign="top" width="260">
@@ -30,21 +24,14 @@
                         <li><a href="details.html#memo">Перейти до пам’ятки (інша сторінка)</a></li>
                     </ul>
 
-                    <p>
-                        <small>
-                            Підказка: відносне посилання вище веде на розділ <code>#memo</code> файлу
-                            <code>details.html</code>.
-                        </small>
-                    </p>
                 </nav>
 
                 <hr>
 
                 <!-- Зображення + гіперпосилання (клік по картинці) -->
                 <figure>
-                    <a href="details.html#memo">
+                    <a href="details.html#memo" target="_blank">
                         <img src="images/var_phys.png"
-                             alt="Формула E=mc² і пояснення позначень"
                              width="360"
                              height="80"
                              decoding="async">
@@ -53,29 +40,22 @@
                         Клікни по зображенню → відкриється потрібний розділ на іншій сторінці.
                     </figcaption>
                 </figure>
+
             </td>
 
             <td valign="top">
                 <main>
                     <section id="formatted">
-                        <h2>Оформлений текст (як у варіанті)</h2>
+                        <h2>Оформлений текст</h2>
 
                         <p>
                             <strong><em>E</em>=<em>m</em><em>c</em><sup>2</sup></strong>,
                             where <strong>E</strong> &mdash; energy of the object,
                             <strong>m</strong> &mdash; it&apos;s mass,
                             <strong>c</strong> &mdash; speed of light in vacuum,
-                            equals to <strong>299&nbsp;792&nbsp;458</strong> m/s
-                        </p>
+                            equals to 299&nbsp;792&nbsp;458<em> m/s </em>
+</p>
 
-                        <p>
-                            Додатково для сутностей (спецсимволів): &alpha;, &beta;, &rarr;,
-                            а також кутові дужки: &lt;tag&gt;.
-                        </p>
-
-                        <p>
-                            Приклад під- та надрядкового: H<sub>2</sub>O, x<sup>3</sup>.
-                        </p>
 
                         <hr>
                     </section>
@@ -126,13 +106,6 @@
                             </tbody>
                         </table>
 
-                        <p>
-                            <small>
-                                (Без CSS таблиця може виглядати “плоско”, але структура коректна і валідна.)
-                            </small>
-                        </p>
-
-                        <hr>
                     </section>
 
                     <section id="form">
@@ -175,7 +148,7 @@
 
                                 <p>
                                     <label for="group">Група:</label><br>
-                                    <input id="group" name="group" type="text" placeholder="Напр.: ІТЕ-23-1">
+                                    <input id="group" name="group" type="text" placeholder="Напр.: КІУКІ-23-1">
                                 </p>
 
                                 <p>
@@ -217,7 +190,7 @@
                 <hr>
 
                 <footer>
-                    <p><small>ЛР1 HTML • Варіант 3</small></p>
+                    <p><small>ЛР1 HTML  Варіант 3</small></p>
                 </footer>
             </td>
         </tr>
